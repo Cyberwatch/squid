@@ -68,7 +68,7 @@ module Squid
         x = left + w * (index)
         padding = 2
         options = category_options.merge(width: every*w-2*padding, at: [x+padding-w*(every/2.0-0.5), @bottom])
-        @pdf.text_box label, options if (index % every).zero?
+        @pdf.text_box label, **options if (index % every).zero?
         @pdf.stroke_vertical_line @bottom, @bottom - 2, at: x + w/2 if ticks
       end
     end
